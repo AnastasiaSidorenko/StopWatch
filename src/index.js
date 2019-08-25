@@ -186,11 +186,29 @@ function Timer({interval}) {
     )
 }
 
+function CurrentTime(){
+    const [intervalId,setIntervalId] = useState(0);
+    const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+    useEffect(()=> {
+        const id = setInterval(() => {
+             // setCurrentTime(new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+            setCurrentTime(new Date().toLocaleTimeString());
+        }, 20);
+        setIntervalId(id);
+        return () => {
+            clearInterval(intervalId);
+        }});
+    return (
+        <span>{currentTime}</span>
+    )
+}
+
 function App() {
     const [lapses, setLapses] = useState([]);
     const [now, setNow] = useState(0);
     const [start, setStart] = useState(0);
     const [isStopped, setStop] = useState(0);
+    const [showClock, setShowClock] = useState(false);
 
     let interval = +now-(+start);
     const [myInterval, setMyInterval] = useState(null);
@@ -200,6 +218,7 @@ function App() {
     const[ResetB,setResetB] = useState("RESET");
     const[StopB,setStopB] = useState("STOP");
     const[ResumeB,setResumeB] = useState("RESUME");
+    const[showClockB, setShowClockB] = useState("Show / Hide current time");
     const[LANG,setLANG] = useState("eng");
     const[TableDurationHeader, setDurationHeader] = useState("Duration");
     const[TableNumberHeader, setNumberHeader] = useState("Number");
@@ -260,6 +279,7 @@ function App() {
             setDurationHeader("Duration");
             setNumberHeader("Number");
             setTimeHeader("Time");
+            setShowClockB("Show / Hide current time");
             setLANG("eng");
         }
     };
@@ -273,14 +293,31 @@ function App() {
             setDurationHeader("Длительность");
             setNumberHeader("Номер");
             setTimeHeader("Общее время");
+            setShowClockB("Показать / Скрыть текущее время");
             setLANG("ru");
+        }
+    };
+
+    let ToggleCurrentTime = () => {
+        setShowClock(!showClock);
+        if(LANG==="ru"){
+            setShowClockB("Показать/ скрыть текущее время");
+        }
+        else {
+            setShowClockB("Show / Hide current time");
         }
     };
 
     return (
         <div className="App">
-            <div className="lang_switcher">
-            <button onClick={()=>RU()}>РУС</button><button onClick={()=>ENG()}>ENG</button>
+            <div className="switchers_current_time">
+                <div className="lang_switcher">
+                    <button onClick={()=>RU()}>РУС</button><button onClick={()=>ENG()}>ENG</button>
+                </div>
+                <div className="current_time_block">
+                    <button className="showTimeButton" onClick={()=>{ToggleCurrentTime()}}>{showClockB}</button>
+                    {showClock ? <CurrentTime /> : null}
+                </div>
             </div>
                 <div className="Timer">
                     <Timer interval={interval} />
@@ -305,11 +342,10 @@ function App() {
                         :
                     (<div className="Buttons twoButtons">
                         <button onClick={()=>handleStart()} className="startButton">{StartB}</button>
-                        <button onClick={()=>handleReset()} className="resetButton">{ResetB}</button>
                     </div> )
             }
             <LapsesList lapses={lapses} numberHeader={TableNumberHeader} timeHeader={TableTimeHeader} durationHeader={TableDurationHeader}/>
-        </div>
+            </div>
        );
 }
 

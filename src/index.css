@@ -9,15 +9,6 @@
     background-color: whitesmoke;
     border-bottom: solid 1px lightgrey;
 }
-.deleteButton {
-    border: none;
-    outline:none;
-    background: white;
-    font-size:1.1em;
-    padding: 1px;
-    font-weight: bolder;
-    color: darkred;
-}
 .LapsesList{
     margin-top: 20px;
 }
@@ -26,20 +17,17 @@
   justify-self: center;
 }
 .resetButton {
-    background-color: lightslategrey;
+    background: lightslategrey;
 }
 .stopButton {
-    color: darkred;
     background: indianred;
 }
 .lapButton {
-    color: rebeccapurple;
     background: mediumpurple;
 }
 .twoButtons {
     width: 100%;
     display: grid;
-    /* add your code below this line */
     grid-template-columns: 100px 100px;
     grid-column-gap: 180px;
     justify-content: center;
@@ -50,16 +38,17 @@
     padding: .7em 1.5em;
     font-size: 1em;
     font-weight: bold;
-    /*align-self: center;*/
     outline: none;
     text-decoration: none;
-    /*border: none;*/
     border-radius: 15px;
     border: none;
     color:white;
 }
 button:hover {
     cursor: pointer;
+}
+.showTimeButton {
+    background: darkcyan;
 }
 .Timer {
   align-items: flex-start;
@@ -85,11 +74,40 @@ button:hover {
     display:grid;
     grid-template-columns: 50px 50px;
     grid-column-gap: 10px;
-    margin-left:-100px;
+    /*margin-left:-100px;*/
+}
+.switchers_current_time{
+    display: grid;
+    grid-template-columns: 200px 100px;
+    grid-column-gap: 60px;
+    margin-left: -60px;
+}
+
+.current_time_block {
+    display: grid;
+    grid-template-columns: 260px 160px;
+    grid-column-gap: 20px;
+    align-content: center;
+    margin-right: -100px;
+}
+.current_time_block button {
+    /*padding: .5em 0.5em;*/
+    font-size: 0.9em;
+    font-weight: bold;
+    /*align-self: center;*/
+    outline: none;
+    text-decoration: none;
+    /*border: none;*/
+    border-radius: 5px;
+    border: none;
+    color:white;
+}
+.current_time_block span {
+    font-size: 1.4em;
 }
 .lang_switcher button{
     background-color: mediumvioletred;
-    padding: .4em .7em;
+    padding: .4em .3em;
     font-size: 0.8em;
     font-weight: bold;
     /*align-self: center;*/
@@ -113,6 +131,7 @@ button:hover {
     overflow: hidden;
     height: 1em;
     width: 1em;
+    background-color: white;
 }
 
 .clock::after {

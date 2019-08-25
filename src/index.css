@@ -1,0 +1,366 @@
+.Lapse{
+   display: grid;
+    /* add your code below this line */
+    grid-template-columns: 80px 120px 120px;
+    grid-column-gap: 50px;
+    font-size:1.2em;
+    width: 100%;
+    padding: 9px 0px 9px 9px;
+    background-color: whitesmoke;
+    border-bottom: solid 1px lightgrey;
+}
+.deleteButton {
+    border: none;
+    outline:none;
+    background: white;
+    font-size:1.1em;
+    padding: 1px;
+    font-weight: bolder;
+    color: darkred;
+}
+.LapsesList{
+    margin-top: 20px;
+}
+.startButton{
+  background: seagreen;
+  justify-self: center;
+}
+.resetButton {
+    background-color: lightslategrey;
+}
+.stopButton {
+    color: darkred;
+    background: indianred;
+}
+.lapButton {
+    color: rebeccapurple;
+    background: mediumpurple;
+}
+.twoButtons {
+    width: 100%;
+    display: grid;
+    /* add your code below this line */
+    grid-template-columns: 100px 100px;
+    grid-column-gap: 180px;
+    justify-content: center;
+    align-content: center;
+}
+.Buttons button {
+    margin-top: 10px;
+    padding: .7em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    /*align-self: center;*/
+    outline: none;
+    text-decoration: none;
+    /*border: none;*/
+    border-radius: 15px;
+    border: none;
+    color:white;
+}
+button:hover {
+    cursor: pointer;
+}
+.Timer {
+  align-items: flex-start;
+  justify-self: center;
+  font-size: 3em;
+  font-weight: 200;
+}
+.lapseTimer{
+  align-items: flex-start;
+  justify-self: center;
+  font-size: 1.5em;
+  font-weight: 200;
+  color:midnightblue;
+}
+.App {
+    height: 100vh;
+    width: 100vw; /* Magic here */
+    display: grid;
+    justify-content: center;
+    align-content: start;
+}
+.lang_switcher{
+    display:grid;
+    grid-template-columns: 50px 50px;
+    grid-column-gap: 10px;
+    margin-left:-100px;
+}
+.lang_switcher button{
+    background-color: mediumvioletred;
+    padding: .4em .7em;
+    font-size: 0.8em;
+    font-weight: bold;
+    /*align-self: center;*/
+    outline: none;
+    text-decoration: none;
+    /*border: none;*/
+    border-radius: 15px;
+    border: none;
+    color:white;
+}
+.ClockContainer{
+    margin-top: 20px;
+    justify-self: center;
+}
+.clock {
+    box-shadow: inset 0 0 0 0.02em ghostwhite;
+    display: inline-block;
+    border-radius: 0.5em;
+    position: relative;
+    font-size: 250px;
+    overflow: hidden;
+    height: 1em;
+    width: 1em;
+}
+
+.clock::after {
+    content:'';
+    background: rgb(186,177,177);
+    background: radial-gradient(circle, white  0%,ghostwhite 50%, lightgrey 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 35%;
+    top: 34%;
+    width: 80px;
+    height: 80px;
+    z-index: 20;
+}
+
+.clock__hand-container, .clock__hand, .clock__stroke {
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 1em;
+    width: 1em;
+    left: 50%;
+    top: 50%;
+}
+.clock__stroke::after {
+    content: "";
+    background-color: grey;
+    margin-left: -0.01em;
+    position: absolute;
+    display: block;
+    height: 0.11em;
+    width: 0.01em;
+    top: 0.02em;
+    left: 50%;
+}
+.clock__stroke--small::after {
+    content:"";
+    background-color: lightgrey;
+    width: 0.01em;
+    height: 0.07em;
+    z-index: 17;
+}
+.clock__hand--minute::after {
+    content: "";
+    border-radius: 0.012em 0.012em 0.01em 0.01em;
+    background-color: darkslateblue;
+    margin-bottom: -0.02em;
+    margin-left: -0.015em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.47em;
+    width: 0.02em;
+    bottom: 50%;
+    left: 50%;
+    z-index:19;
+}
+.clock__hand--second::after {
+    content: "";
+    border-radius: 0.012em 0.012em 0.01em 0.01em;
+    background-color: darkgreen;
+    margin-bottom: -0.02em;
+    margin-left: -0.005em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.5em;
+    width: 0.018em;
+    bottom: 50%;
+    left: 50%;
+    z-index:20;
+}
+.clock__stroke--1 {
+    transform: rotate(6deg);
+}
+.clock__stroke--2 {
+    transform: rotate(12deg);
+}
+.clock__stroke--3 {
+    transform: rotate(18deg);
+}
+.clock__stroke--4 {
+    transform: rotate(24deg);
+}
+.clock__stroke--5 {
+    transform: rotate(30deg);
+}
+.clock__stroke--6 {
+    transform: rotate(36deg);
+}
+.clock__stroke--7 {
+    transform: rotate(42deg);
+}
+.clock__stroke--8 {
+    transform: rotate(48deg);
+}
+.clock__stroke--9 {
+    transform: rotate(54deg);
+}
+.clock__stroke--10 {
+    transform: rotate(60deg);
+}
+.clock__stroke--11 {
+    transform: rotate(66deg);
+}
+.clock__stroke--12 {
+    transform: rotate(72deg);
+}
+.clock__stroke--13 {
+    transform: rotate(78deg);
+}
+.clock__stroke--14 {
+    transform: rotate(84deg);
+}
+.clock__stroke--15 {
+    transform: rotate(90deg);
+}
+.clock__stroke--16 {
+    transform: rotate(96deg);
+}
+.clock__stroke--17 {
+    transform: rotate(102deg);
+}
+.clock__stroke--18 {
+    transform: rotate(108deg);
+}
+.clock__stroke--19 {
+    transform: rotate(114deg);
+}
+.clock__stroke--20 {
+    transform: rotate(120deg);
+}
+.clock__stroke--21 {
+    transform: rotate(126deg);
+}
+.clock__stroke--22 {
+    transform: rotate(132deg);
+}
+.clock__stroke--23 {
+    transform: rotate(138deg);
+}
+.clock__stroke--24 {
+    transform: rotate(144deg);
+}
+.clock__stroke--25 {
+    transform: rotate(150deg);
+}
+.clock__stroke--26 {
+    transform: rotate(156deg);
+}
+.clock__stroke--27 {
+    transform: rotate(162deg);
+}
+.clock__stroke--28 {
+    transform: rotate(168deg);
+}
+.clock__stroke--29 {
+    transform: rotate(174deg);
+}
+.clock__stroke--30 {
+    transform: rotate(180deg);
+}
+.clock__stroke--31 {
+    transform: rotate(186deg);
+}
+.clock__stroke--32 {
+    transform: rotate(192deg);
+}
+.clock__stroke--33 {
+    transform: rotate(198deg);
+}
+.clock__stroke--34 {
+    transform: rotate(204deg);
+}
+.clock__stroke--35 {
+    transform: rotate(210deg);
+}
+.clock__stroke--36 {
+    transform: rotate(216deg);
+}
+.clock__stroke--37 {
+    transform: rotate(222deg);
+}
+.clock__stroke--38 {
+    transform: rotate(228deg);
+}
+.clock__stroke--39 {
+    transform: rotate(234deg);
+}
+.clock__stroke--40 {
+    transform: rotate(240deg);
+}
+.clock__stroke--41 {
+    transform: rotate(246deg);
+}
+.clock__stroke--42 {
+    transform: rotate(252deg);
+}
+.clock__stroke--43 {
+    transform: rotate(258deg);
+}
+.clock__stroke--44 {
+    transform: rotate(264deg);
+}
+.clock__stroke--45 {
+    transform: rotate(270deg);
+}
+.clock__stroke--46 {
+    transform: rotate(276deg);
+}
+.clock__stroke--47 {
+    transform: rotate(282deg);
+}
+.clock__stroke--48 {
+    transform: rotate(288deg);
+}
+.clock__stroke--49 {
+    transform: rotate(294deg);
+}
+.clock__stroke--50 {
+    transform: rotate(300deg);
+}
+.clock__stroke--51 {
+    transform: rotate(306deg);
+}
+.clock__stroke--52 {
+    transform: rotate(312deg);
+}
+.clock__stroke--53 {
+    transform: rotate(318deg);
+}
+.clock__stroke--54 {
+    transform: rotate(324deg);
+}
+.clock__stroke--55 {
+    transform: rotate(330deg);
+}
+.clock__stroke--56 {
+    transform: rotate(336deg);
+}
+.clock__stroke--57 {
+    transform: rotate(342deg);
+}
+.clock__stroke--58 {
+    transform: rotate(348deg);
+}
+.clock__stroke--59 {
+    transform: rotate(354deg);
+}
